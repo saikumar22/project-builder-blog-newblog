@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Blog;
+
 
 
 
@@ -46,12 +48,7 @@ public class BlogController extends HttpServlet {
 		System.out.println("Blog Title: "+blog.getTitle());
 		System.out.println("Blog Description: "+blog.getDescription());
 		System.out.println("Posted on: "+blog.getPostedOn());
-		
-		
-		
-		
 
-		
 		if(blog!=null) {
 			request.setAttribute("blog", blog);
 			request.setAttribute("user",user);
