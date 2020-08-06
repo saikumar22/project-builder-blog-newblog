@@ -32,7 +32,21 @@ public class BlogController extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-/*		String blogDetails = request.getParameter("selectedAnswers");
+		String blogDetails = request.getParameter("selectedAnswers");
+		String[] blogDate = blogDetails.split(",");
+		String blogTitle = blogDate[0];
+		String blogdescription = blogDate[1];
+		LocalDate blogDate = LocalDate.now();
+		
+		Blog blog=new Blog(blogTitle, blogDescription, blogDate);
+		blog.setTitle(blogTitle);
+		blog.setDescription(blogDescription);
+		blog.setPostedOn(blogDate);
+		
+		System.out.println("Blog Title: "+blog.getTitle());
+		System.out.println("Blog Description: "+blog.getDescription());
+		System.out.println("Posted on: "+blog.getPostedOn());
+		
 		
 		
 		
@@ -44,7 +58,7 @@ public class BlogController extends HttpServlet {
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/blogView.jsp");
 			rd.forward(request, response);
 		}
-	*/	
+		
 	}
 
 }
